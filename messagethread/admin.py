@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from messagethread.models import MessageThread
+
+admin.site.register(MessageThread)

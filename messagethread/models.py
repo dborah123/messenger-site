@@ -1,12 +1,11 @@
 from django.db import models
 from django.urls import reverse
 from messagenode.models import Messagenode
-
 from person.models import Person
 
-class Thread(models.Model):
-    people = models.ManyToManyField("person.Person")
-    messages = models.ManyToManyField(Messagenode)
+class MessageThread(models.Model):
+    people = models.ManyToManyField(Person)
+    messages = models.ManyToManyField(Messagenode, blank=True)
 
     class Meta:
         verbose_name = "Thread"

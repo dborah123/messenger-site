@@ -5,7 +5,7 @@ from django.urls import reverse
 class Person(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    contacts = models.ManyToManyField("self")
+    contacts = models.ManyToManyField("self", blank=True)
 
     class Meta:
         verbose_name = "Person"

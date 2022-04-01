@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from messagenode.models import Messagenode
+
+admin.site.register(Messagenode)
