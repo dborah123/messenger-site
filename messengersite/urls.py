@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import include, path
 
 from django.views.generic import TemplateView
+from messengersite.views import login_view
 import person.urls, messagethread.urls, messagenode.urls
 
 urlpatterns = [
@@ -25,4 +26,5 @@ urlpatterns = [
     path('person/', include(person.urls, namespace='person')),
     path('thread/', include(messagethread.urls, namespace='thread')),
     path('message/', include(messagenode.urls, namespace="message")),
+    path('login/', login_view, name="login"),
 ]
