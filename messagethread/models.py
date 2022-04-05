@@ -4,7 +4,7 @@ from messagenode.models import Messagenode
 from person.models import Person
 
 class MessageThread(models.Model):
-    people = models.ManyToManyField(Person)
+    people = models.ManyToManyField(Person, blank=True)
     messages = models.ManyToManyField(Messagenode, blank=True)
 
     class Meta:

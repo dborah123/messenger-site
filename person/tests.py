@@ -1,9 +1,6 @@
-from urllib import response
 from django.contrib.auth.models import User
-from django.urls import reverse
 from rest_framework import status
-# from rest_framework.authtoken.models import Token
-from rest_framework.test import APIClient, APIRequestFactory, APITestCase
+from rest_framework.test import APIClient, APITestCase
 
 from person.models import Person
 
@@ -79,6 +76,7 @@ class PersonViewSetTestCase(APITestCase):
             "user": 1,
             "first_name": "Rasika",
             "last_name": "Iyer",
+            "contacts": "1"
         }
 
         response = self.client.post("/person/", data)
@@ -103,5 +101,3 @@ class PersonViewSetTestCase(APITestCase):
         response = self.client.delete("/person/1/")
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-
-
