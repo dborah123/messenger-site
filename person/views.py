@@ -8,11 +8,11 @@ from .models import Person
 
 
 class UserListView(ListCreateAPIView):
-    query_set = User.objects.all()
+    queryset = User.objects.all()
     serializer_class = UserSerializer
 
 class UserDetailView(RetrieveUpdateDestroyAPIView):
-    query_set = User.objects.all()
+    queryset = User.objects.all()
     serializer_class = UserSerializer
 
 class PersonListView(ListCreateAPIView):
