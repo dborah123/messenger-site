@@ -17,7 +17,7 @@ class UserViewSetTestCase(APITestCase):
 
     def test_user_get(self):
         self.create_user()
-        reponse = self.client.get("/person/user/1")
+        reponse = self.client.get("/person/user/1/")
 
         self.assertEqual(reponse.status_code, status.HTTP_200_OK)
 
@@ -38,14 +38,14 @@ class UserViewSetTestCase(APITestCase):
             "password": "even-stronger-password"
         }
 
-        response = self.client.put('/person/user/1', data)
+        response = self.client.put('/person/user/1/', data)
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)
     
     def test_user_delete(self):
         self.create_user()
 
-        response = self.client.delete('/person/user/1')
+        response = self.client.delete('/person/user/1/')
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 

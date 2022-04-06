@@ -7,5 +7,5 @@ app_name="messagenode"
 
 urlpatterns = [
     path('', MessagenodeListView.as_view(), name="messagenodes"),
-    path('<int:pk>', MessagenodeDetailView.as_view(), name='messagenode')
+    path('<int:pk>/', MessagenodeDetailView.as_view(), name='messagenode')
 ]
