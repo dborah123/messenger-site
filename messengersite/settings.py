@@ -29,7 +29,7 @@ DEBUG = (config("DEBUG_VALUE") == "True")
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config("SECRET_KEY")
 
-ALLOWED_HOSTS = ['.localhost', '127.0.0.1', '[::1]', '140.82.114.3',]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -48,10 +48,12 @@ INSTALLED_APPS = [
     'person',
 
     # 3rd party
+    'corsheaders',
     'rest_framework',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -140,3 +142,4 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CORS_ORIGIN_ALLOW_ALL = True
